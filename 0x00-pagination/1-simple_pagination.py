@@ -5,10 +5,9 @@ and end indices for a given page and page size.
 '''
 
 
-from typing import Tuple
+from typing import Tuple, List
 import csv
 import math
-from typing import List
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -53,6 +52,6 @@ class Server:
         start_index, end_index = index_range(page, page_size)
         data = self.dataset()
 
-        if start_index >= len(data):
+        if start_index > len(data):
             return []
         return data[start_index:end_index]
