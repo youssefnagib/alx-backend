@@ -18,6 +18,7 @@ app.config.from_object(Config)
 app.url_map.strict_slashes = False
 babel = Babel(app)
 
+
 @app.route('/')
 def index():
     '''return hello world html file'''
